@@ -28,14 +28,16 @@ namespace SongRequest
                 Console.ReadLine();
             }
         }
-
+		
         private static void Run()
         {
+			SongPlayerGStreamer songPlayerGStreamer= new SongPlayerGStreamer();
             using (HttpListener listener = new HttpListener())
             {
-                listener.Prefixes.Add(string.Format("http://*:{0}/", ConfigReader.SongRequestPort ?? 8765));
+				int port = ConfigReader.SongRequestPort ?? 8765;
+                listener.Prefixes.Add(string.Format("http://*:{0}/", port));
                 listener.Start();
-                Console.WriteLine("Listening...");
+                Console.WriteLine(string.Format("Listening on port {0}...", port));
                 while (_running)
                 {
                     HttpListenerContext context = listener.GetContext();

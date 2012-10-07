@@ -58,6 +58,13 @@
       <HintPath>..\dlls\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Configuration" />
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Private>False</Private>
+      <Package>glib-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="gstreamer-sharp">
+      <HintPath>..\gstreamer\gstreamer-sharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigReader.cs" />
@@ -74,6 +81,7 @@
     <Compile Include="SongPlayer\ISongPlayer.cs" />
     <Compile Include="SongPlayer\Song.cs" />
     <Compile Include="SongPlayer\SongPlayerMock.cs" />
+    <Compile Include="SongPlayer\SongPlayerGStreamer.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Static\404.htm" />
